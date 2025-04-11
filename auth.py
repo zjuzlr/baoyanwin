@@ -25,7 +25,7 @@ def login_user():
         if row and hash_password(password) == row[2]:
             st.session_state.user = {"id": row[0], "email": row[1]}
             st.success("登录成功")
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("邮箱或密码错误")
 
